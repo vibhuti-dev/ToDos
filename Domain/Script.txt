@@ -1,0 +1,26 @@
+USE [DapperDB]
+GO
+
+/****** Object:  Table [dbo].[ToDos]    Script Date: 02/04/2021 00:21:04 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ToDos](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [varchar](500) NULL,
+	[TargetDate] [datetime] NULL,
+	[Deleted] [bit] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
