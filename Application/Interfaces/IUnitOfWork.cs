@@ -6,6 +6,6 @@ namespace Application.Interfaces
 {
     public interface IUnitOfWork
     {
-         IToDoRepository ToDo { get; }
+         IToDoRepository ToDos { get; }
     }
 }

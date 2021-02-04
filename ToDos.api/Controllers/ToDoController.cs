@@ -24,32 +24,32 @@ namespace ToDos.api.Controllers
          [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var data = await unitOfWork.ToDo.GetAllAsync();
+            var data = await unitOfWork.ToDos.GetAllAsync();
             return Ok(data);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var data = await unitOfWork.ToDo.GetByIdAsync(id);
+            var data = await unitOfWork.ToDos.GetByIdAsync(id);
             if (data == null) return Ok();
             return Ok(data);
         }
         [HttpPost]
         public async Task<IActionResult> Add(ToDo todo)
         {
-            var data = await unitOfWork.ToDo.AddAsync(todo);
+            var data = await unitOfWork.ToDos.AddAsync(todo);
             return Ok(data);
         }
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            var data = await unitOfWork.ToDo.DeleteAsync(id);
+            var data = await unitOfWork.ToDos.DeleteAsync(id);
             return Ok(data);
         }
         [HttpPut]
         public async Task<IActionResult> Update(ToDo todo)
         {
-            var data = await unitOfWork.ToDo.UpdateAsync(todo);
+            var data = await unitOfWork.ToDos.UpdateAsync(todo);
             return Ok(data);
         }
     }

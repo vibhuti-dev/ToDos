@@ -6,11 +6,10 @@ namespace Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
-
-       public IToDoRepository ToDo {get;}
+        public IToDoRepository ToDos {get;}
         public UnitOfWork(IToDoRepository todoRepository)
         {
-            ToDo = todoRepository;
+            ToDos = todoRepository;
         }
        
     }
