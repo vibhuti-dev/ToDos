@@ -20,7 +20,7 @@ namespace Infrastructure.Repository
         public async Task<int> AddAsync(ToDo entity)
         {
             //entity.AddedOn = DateTime.Now;
-            var sql = "Insert into ToDos (Description) VALUES (@Description)";
+            var sql = "Insert into ToDos (Description, TargetDate, Deleted) VALUES (@Description, @TargetDate, @Deleted)";
             using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
             {
                 connection.Open();
@@ -65,7 +65,7 @@ namespace Infrastructure.Repository
         public async Task<int> UpdateAsync(ToDo entity)
         {
             //entity.ModifiedOn = DateTime.Now;
-            var sql = "UPDATE ToDos SET Description =@Description WHERE Id = @Id";
+            var sql = "UPDATE ToDos SET Description =@Description, TargetDate=@TargetDate, Deleted=@Deleted WHERE Id = @Id";
             using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
             {
                 connection.Open();
